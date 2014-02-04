@@ -44,7 +44,7 @@ class Gon
 
       def gon
         if wrong_gon_request?
-          gon_request = Request.new(env)
+          gon_request = Request.new(request.env)
           gon_request.id = request.uuid
           Thread.current['gon'] = gon_request
         end
